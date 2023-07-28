@@ -23,7 +23,7 @@ class E2EEventsApplication(EventsApplicationBase):
                 f'id={request["id"]}, environment={request["environment"]["id"]}',
             )
 
-    @event('asset_purchase_request_processing', statuses=['pending'])
+    @event('invalid_asset_purchase_request_processing', statuses=['pending'])
     def autoapprove_purchase_request(self, request):
         param_a = ''.join(random.choice(string.ascii_lowercase) for _ in range(10))
         param_b = ''.join(random.choice(string.ascii_lowercase) for _ in range(6))
